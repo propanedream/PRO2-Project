@@ -14,27 +14,30 @@ public class SelectMedarbejdere {
 
 
             Connection minConnection;
-            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLEXPRESS;databaseName=DAOSA - 2.sem lektion 2;user=sa;password=123456789;");
-
+            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLEXPRESS;databaseName=DAOS - 2.sem lektion 3;user=sa;password=123456789;");
             Statement stmt = minConnection.createStatement();
-            ResultSet res = stmt.executeQuery( "select mobil from medarbejder where navn = (?)");// preparedStatement
 
 
+            String sql = "select mobil from Medarbejder where navn = (?)";
+            PreparedStatement pestmt = minConnection.prepareStatement(sql);
+            pestmt.clearParameters();
+
+            pestmt.setString(1, navn);
+
+
+            ResultSet res = pestmt.executeQuery();
             while (res.next()) {
-                System.out.println(res.getString(navn));
+                System.out.println(res.getInt(1));
             }
 
-            res.close();
+
+            pestmt.close();
             stmt.close();
             minConnection.close();
         } catch (Exception e) {
             System.out.println("fejl:  " + e.getMessage());
         }
     }
-
-
-
-
 
 
 }

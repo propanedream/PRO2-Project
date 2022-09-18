@@ -20,9 +20,9 @@ public class Opgave3{
 
 
             Connection minConnection;
-            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLExpress;databaseName=DAOS - Lektion 2;user=sa;password=123456789;");
+            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLExpress;databaseName=DAOS - Lektion 3;user=sa;password=123456789;");
 
-            String sql = "select * from medarbejder m where navn = '?' * ";// preparedStatement
+            String sql = "select * from medarbejder where navn = '?' ";// preparedStatement
             PreparedStatement prestmt = minConnection.prepareStatement(sql);
             prestmt.clearParameters();
 
