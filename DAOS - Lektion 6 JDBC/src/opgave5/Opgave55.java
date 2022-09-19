@@ -8,11 +8,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class Opgave5 {
+public class Opgave55 {
     public static void main(String[] args) {
 
         try {
-            System.out.println("Opret Tidsregistrering: ");
+            System.out.println("Opret Medlem ");
             BufferedReader inLine = new BufferedReader(new InputStreamReader(System.in));
 
             System.out.print("Indtast Starttid: ");
@@ -28,9 +28,8 @@ public class Opgave5 {
             System.out.println("Indtast OpgaveNr");
             String opgaveNr = inLine.readLine();
 
-
             Connection minConnection;
-            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLEXPRESS;databaseName=DAOS - 2.sem lektion 3;user=sa;password=123456789;");
+            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLExpress;databaseName=DAOS - Lektion 3;user=sa;password=123456789;");
 
             String sql = "insert into Tidsregistrering values(?,?,?,?,?,?) ";// preparedStatement
             PreparedStatement prestmt = minConnection.prepareStatement(sql);
@@ -39,19 +38,19 @@ public class Opgave5 {
             prestmt.setString(1, startTid);
             prestmt.setString(2, slutTid);
             prestmt.setString(3, beskrivelse);
-            prestmt.setString(4, dato);
-            prestmt.setInt(5, Integer.parseInt(medarbejderNr));
-            prestmt.setInt(6, Integer.parseInt(opgaveNr));
+            prestmt.setString(4,dato);
+            prestmt.setInt(5,Integer.parseInt(medarbejderNr));
+            prestmt.setInt(6,Integer.parseInt(opgaveNr));
 
             prestmt.executeUpdate();
-            System.out.println("Tidsregistrering oprettet.");
+            System.out.println("Indsat tidsregistrering");
 
             prestmt.close();
             minConnection.close();
 
 
-        } catch (SQLException | IOException e) {
-            System.out.println("fejl:  " + e.getMessage());
+        } catch (SQLException | IOException sqE) {
+            System.out.println("fejl:  " + sqE.getMessage());
         }
     }
 }
