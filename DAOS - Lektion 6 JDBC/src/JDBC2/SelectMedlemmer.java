@@ -1,9 +1,6 @@
 package JDBC2;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class SelectMedlemmer {
 	
@@ -25,6 +22,10 @@ public class SelectMedlemmer {
 			minConnection.close();
 
 			// sql exception før generel exception, da sql exceptions er specifikke
+
+		} catch (SQLException e) {
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getMessage());
 
 		} catch (Exception e) {
 			System.out.println("fejl:  " + e.getMessage());

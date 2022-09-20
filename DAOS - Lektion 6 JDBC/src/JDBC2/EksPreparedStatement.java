@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class EksPreparedStatement {
 
@@ -37,8 +38,16 @@ public class EksPreparedStatement {
 
 			prestmt.close();
 			minConnection.close();
-
-
+		} catch (SQLException e) {
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getMessage());
+			if (e.getErrorCode()==2627){
+				System.out.println("Vælg venligst et andet id");
+			}
+			if (e.getErrorCode() == 8152){
+				System.out.println("Vælg venligst et kortere navn");
+			}
+			int abs = Math.abs(7);
 		} catch (Exception e) {
 			System.out.println("fejl:  " + e.getMessage());
 		}
