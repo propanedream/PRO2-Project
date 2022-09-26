@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class Miniprojekt {
 
     public static void main(String[] args) {
-
+    //OPGAVE 7
         try {
             System.out.println("Opret karakter. ");
             BufferedReader inLine = new BufferedReader(new InputStreamReader(System.in));
@@ -34,7 +34,7 @@ public class Miniprojekt {
             prestmt.setInt(1, Integer.parseInt(karakter));
             prestmt.setString(2, semester);
             prestmt.setInt(3, Integer.parseInt(studieNr));
-            prestmt.setInt(3, Integer.parseInt(cvrNr));
+            prestmt.setInt(4, Integer.parseInt(cvrNr));
 
             prestmt.executeUpdate();
             System.out.println("Karakter indsat.");
@@ -42,16 +42,20 @@ public class Miniprojekt {
             prestmt.close();
             minConnection.close();
         } catch (SQLException e) {
-            System.out.println(e.getErrorCode());
-            System.out.println(e.getMessage());
+//            System.out.println(e.getErrorCode());
+//            System.out.println(e.getMessage());
             if (e.getErrorCode()==2627){
                 System.out.println("Vælg venligst et andet id");
             }
             if (e.getErrorCode() == 8152){
                 System.out.println("Vælg venligst et kortere semesternavn");
             }
-            int abs = Math.abs(7);
-        } catch (Exception e) {
+            if (e.getErrorCode()==547){
+                System.out.println("Foreign key constraint, tjek venligst om dine data er korrekte.");
+            }
+
+        }
+        catch (Exception e) {
             System.out.println("fejl:  " + e.getMessage());
         }
     }
