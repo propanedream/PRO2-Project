@@ -3,12 +3,15 @@ package controller;
 import ordination.*;
 import storage.*;
 
-public class Controller implements StorageInterface{
+import java.util.List;
+
+public class Controller implements StorageInterface {
+    //private Storage storage; skiftet ud med interface
     private StorageInterface storageInterface;
     private static Controller controller;
 
-    private Controller(StorageInterface storageInterface) {
-       this.storageInterface = storageInterface;
+    Controller(StorageInterface storageInterface) {
+        this.storageInterface = storageInterface;
     }
 
     public static Controller getController(StorageInterface storageInterface) {
@@ -35,5 +38,10 @@ public class Controller implements StorageInterface{
             }
         }
         return antal;
+    }
+
+    @Override
+    public List<Patient> getAllPatienter() {
+        return null;
     }
 }

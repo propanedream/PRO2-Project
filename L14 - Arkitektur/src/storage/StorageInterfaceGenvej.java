@@ -4,6 +4,6 @@ import ordination.Patient;
 
 import java.util.List;
 
-public interface StorageInterface {
+public interface StorageInterfaceGenvej {
     List<Patient> getAllPatienter();
 }
