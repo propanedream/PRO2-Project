@@ -1,6 +1,11 @@
 package opgave2;
 
-public class PersonCollection {
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
+public class PersonCollection implements Iterable<Person> {
     // array to store the persons in;
     // persons have indices in [0, size-1]
     private Person[] persons;
@@ -138,9 +143,61 @@ public class PersonCollection {
         return sb.toString();
     }
 
+    @Override
+    public Iterator<Person> iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super Person> action) {
+        Iterable.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator<Person> spliterator() {
+        return Iterable.super.spliterator();
+    }
+
     // -------------------------------------------------------------------------
     // Ex. 2
 
     // TODO
+    private class PersonIterator implements Iterator<Person> {
+        private int position = 0;
+        private int sizeClone = size;
 
+
+        @Override
+        public boolean hasNext() {
+            // return persons[position] != null && position < size; --simplified
+            if (position >= persons.length) {
+                // if sætning der tjekker om der er null værdi
+                return false;
+            } else return true;
+        }
+
+        @Override
+        public Person next() {
+            if (sizeClone == size) {
+                if (persons[position] != null) {
+                    Person personiterator = persons[position];
+                    position = position + 1;
+                    return personiterator;
+                } else {
+                    position++;
+                    return next();
+                }
+            } else throw new ConcurrentModificationException("Listen har ændret sig.");
+        }
+
+        @Override
+        public void remove() {
+            Iterator.super.remove();
+        }
+
+        @Override
+        public void forEachRemaining(Consumer<? super Person> action) {
+            Iterator.super.forEachRemaining(action);
+        }
+    }
 }
