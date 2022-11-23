@@ -12,39 +12,34 @@ public class Opgave5 {
     public static void main(String[] args) {
 
         try {
-            System.out.println("Opret Tidsregistrering: ");
+            System.out.println("Opret Produkt: ");
             BufferedReader inLine = new BufferedReader(new InputStreamReader(System.in));
 
-            System.out.print("Indtast Starttid: ");
-            String startTid = inLine.readLine();
-            System.out.print("Indtast Sluttid: ");
-            String slutTid = inLine.readLine();
-            System.out.println("Indtast Beskrivelse");
-            String beskrivelse = inLine.readLine();
-            System.out.println("Intast Dato: ");
-            String dato = inLine.readLine();
-            System.out.println("Indtast medarbejderNr: ");
-            String medarbejderNr = inLine.readLine();
-            System.out.println("Indtast OpgaveNr");
-            String opgaveNr = inLine.readLine();
+            System.out.print("Indtast ProduktID: ");
+            String produktID = inLine.readLine();
+            System.out.print("Indtast produkt navn: ");
+            String produktNavn = inLine.readLine();
+            System.out.println("Indtast minimum antal");
+            String minimumAntal = inLine.readLine();
+            System.out.println("Intast antal på lager: ");
+            String antalPålager= inLine.readLine();
 
 
             Connection minConnection;
-            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLEXPRESS;databaseName=DAOS - 2.sem lektion 3;user=sa;password=123456789;");
+            minConnection = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-Q2FFRF4\\SQLEXPRESS;databaseName=DAOS - aarhus bryghus projekt;user=sa;password=123456789;");
 
-            String sql = "insert into Tidsregistrering values(?,?,?,?,?,?) ";// preparedStatement
+            String sql = "insert into Produkt values(?,?,?,?) ";// preparedStatement
             PreparedStatement prestmt = minConnection.prepareStatement(sql);
             prestmt.clearParameters();
 
-            prestmt.setString(1, startTid);
-            prestmt.setString(2, slutTid);
-            prestmt.setString(3, beskrivelse);
-            prestmt.setString(4, dato);
-            prestmt.setInt(5, Integer.parseInt(medarbejderNr));
-            prestmt.setInt(6, Integer.parseInt(opgaveNr));
+            prestmt.setString(1, produktID);
+            prestmt.setString(2, produktNavn);
+            prestmt.setString(3, minimumAntal);
+            prestmt.setString(4, antalPålager);
+
 
             prestmt.executeUpdate();
-            System.out.println("Tidsregistrering oprettet.");
+            System.out.println("Produkt oprettet.");
 
             prestmt.close();
             minConnection.close();
