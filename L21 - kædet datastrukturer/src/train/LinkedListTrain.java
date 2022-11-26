@@ -88,32 +88,24 @@ public class LinkedListTrain {
      */
     public boolean remove(WagonNode wagon) {
         boolean found = false;
-        // TODO: Assignment 4: Implement this remove method...
+        // Assignment 4:
         WagonNode temp = firstWagon;
-        WagonNode temp1 = firstWagon.getNextWagon();
-        while (!found && temp != null) {
+        WagonNode previous;
 
-
-            if (temp == wagon) {
-                System.out.println(temp.getWagonName());
-                System.out.println(temp1.getWagonName());
-
-
-
-                found = true;
-            } else
-                temp = temp.getNextWagon();
+        if (temp != null && temp == wagon) {
+            firstWagon = temp.getNextWagon();
+            return true;
         }
 
+        while (!found && temp != null) {
+            previous = temp;
+            temp = temp.getNextWagon();
 
-//        while (!found&&firstWagon!=null){
-//            WagonNode temp = firstWagon.getNextWagon();
-//            if (wagon==firstWagon||temp == wagon){
-//                firstWagon.setPreviousWagon(firstWagon.getNextWagon());
-//                found = true;
-//            }
-//
-//        }
+            if (temp == wagon) {
+                previous.setNextWagon(temp.getNextWagon());
+                found = true;
+            }
+        }
         return found;
     }
 
@@ -125,7 +117,20 @@ public class LinkedListTrain {
      */
     public void insertAt(WagonNode wagon, int position) {
         // TODO: Assignment 5: Implement this insert method...
+        WagonNode temp = firstWagon;
+        WagonNode previous;
+        int count = 0;
+        while (temp!=null&&count!=position){
+            previous = temp;
+            temp = temp.getNextWagon();
+            count++;
+            if (count==position){
+                previous.setNextWagon(wagon);
+                System.out.println(wagon);
+                wagon.setNextWagon(temp);
 
-        throw new UnsupportedOperationException("Not implemented");
+            }
+        }
+
     }
 }
