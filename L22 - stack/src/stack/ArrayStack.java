@@ -32,7 +32,7 @@ public class ArrayStack implements StackI
         stack[top] = element;
 
     }
-
+;
     /**
      * Removes the element from the top of the stack.
      *

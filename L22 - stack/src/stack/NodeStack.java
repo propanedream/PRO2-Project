@@ -16,7 +16,7 @@ public class NodeStack implements StackI {
     public NodeStack() {
         this.top = null;
     }
-
+;
     @Override
     public void push(Object element) {
         if (top==null) {

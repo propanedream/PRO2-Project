@@ -7,7 +7,7 @@ public class ArraylistStack implements StackI{
     public void push(Object element) {
 
     }
-
+;
     @Override
     public Object pop() {
         return null;

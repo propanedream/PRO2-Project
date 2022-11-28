@@ -5,7 +5,7 @@ package stack;
  */
 public interface StackI
 {
-
+;
     /**
      * Adds an element to the top of the stack.
      *

@@ -87,7 +87,7 @@ class StackTest
             stack.pop();
         });
     }
-
+;
     @Test
     @Order(2)
     void test_stack_canPeek()
