@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/DAOS - L08 miniprojekt/DAOS - L08 miniprojekt.iml" filepath="$PROJECT_DIR$/DAOS - L08 miniprojekt/DAOS - L08 miniprojekt.iml" />
       <module fileurl="file://$PROJECT_DIR$/DAOS - Lektion 6 JDBC/DAOS - Lektion 6 JDBC.iml" filepath="$PROJECT_DIR$/DAOS - Lektion 6 JDBC/DAOS - Lektion 6 JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/DAOS - lektion 16 processer og tråde/DAOS - lektion 16 processer og tråde.iml" filepath="$PROJECT_DIR$/DAOS - lektion 16 processer og tråde/DAOS - lektion 16 processer og tråde.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DAOS - lektion 17 concurrency/DAOS - lektion 17 concurrency.iml" filepath="$PROJECT_DIR$/DAOS - lektion 17 concurrency/DAOS - lektion 17 concurrency.iml" />
       <module fileurl="file://$PROJECT_DIR$/L04 - Tidskompleksitet/L04 - Tidskompleksitet.iml" filepath="$PROJECT_DIR$/L04 - Tidskompleksitet/L04 - Tidskompleksitet.iml" />
       <module fileurl="file://$PROJECT_DIR$/L05  - Java collections/L05  - Java collections.iml" filepath="$PROJECT_DIR$/L05  - Java collections/L05  - Java collections.iml" />
       <module fileurl="file://$PROJECT_DIR$/L06 - Lambda udtryk/L06 - Lambda udtryk.iml" filepath="$PROJECT_DIR$/L06 - Lambda udtryk/L06 - Lambda udtryk.iml" />
@@ -19,6 +20,12 @@
       <module fileurl="file://$PROJECT_DIR$/L15 - Opsamling/L15 - Opsamling.iml" filepath="$PROJECT_DIR$/L15 - Opsamling/L15 - Opsamling.iml" />
       <module fileurl="file://$PROJECT_DIR$/L2 - Rekursion (fortsat)/L2 - Rekursion (fortsat).iml" filepath="$PROJECT_DIR$/L2 - Rekursion (fortsat)/L2 - Rekursion (fortsat).iml" />
       <module fileurl="file://$PROJECT_DIR$/L21 - kædet datastrukturer/L21 - kædet datastrukturer.iml" filepath="$PROJECT_DIR$/L21 - kædet datastrukturer/L21 - kædet datastrukturer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L22 - stack/L22 - stack.iml" filepath="$PROJECT_DIR$/L22 - stack/L22 - stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L22 - stack 2/L22 - stack 2.iml" filepath="$PROJECT_DIR$/L22 - stack 2/L22 - stack 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L23 - køer og cirkulære lister/L23 - køer og cirkulære lister.iml" filepath="$PROJECT_DIR$/L23 - køer og cirkulære lister/L23 - køer og cirkulære lister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L24 - Hashing/L24 - Hashing.iml" filepath="$PROJECT_DIR$/L24 - Hashing/L24 - Hashing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L25 - generiske klasser/L25 - generiske klasser.iml" filepath="$PROJECT_DIR$/L25 - generiske klasser/L25 - generiske klasser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L26 -/L26 -.iml" filepath="$PROJECT_DIR$/L26 -/L26 -.iml" />
       <module fileurl="file://$PROJECT_DIR$/L3 -/L3 -.iml" filepath="$PROJECT_DIR$/L3 -/L3 -.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lektion 07 - Git/Lektion 07 - Git.iml" filepath="$PROJECT_DIR$/Lektion 07 - Git/Lektion 07 - Git.iml" />
       <module fileurl="file://$PROJECT_DIR$/SU 03 - Test/SU 03 - Test.iml" filepath="$PROJECT_DIR$/SU 03 - Test/SU 03 - Test.iml" />
