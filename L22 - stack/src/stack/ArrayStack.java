@@ -9,12 +9,14 @@ public class ArrayStack implements StackI
 {
     private Object[] stack;
     private int top;
+    
 
     /**
      * Constructs an empty stack.
      */
     public ArrayStack(int size)
     {
+
         top = -1;
         stack = new Object[size];
     }
