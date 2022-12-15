@@ -6,25 +6,22 @@ import java.util.ArrayList;
 public class EX0 {
 
 
-
-
-
-    public static int evenNumbers(ArrayList<Integer> list){
+    public static int evenNumbers(ArrayList<Integer> list) {
         return evenNumbers(list, 0);
     }
 
-private static int evenNumbers(ArrayList<Integer> list, int index){
-        int count=0;
+    private static int evenNumbers(ArrayList<Integer> list, int index) {
+        int count = 0;
         int result;
-        if (index==list.size()){
-            result=0;
-        } else if (list.get(index)%2==1){
-            result = list.get(index)%2 -1 + evenNumbers(list, index+1);}
-        else
-            result = list.get(index)%2 +1 + evenNumbers(list, index+1);
+        if (index == list.size()) {
+            result = 0;
+        } else if (list.get(index) % 2 == 1) {
+            result = list.get(index) % 2 - 1 + evenNumbers(list, index + 1);
+        } else
+            result = list.get(index) % 2 + 1 + evenNumbers(list, index + 1);
 
-return result;
-}
+        return result;
+    }
 
 
     public static void main(String[] args) {
